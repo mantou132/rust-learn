@@ -1,0 +1,14 @@
+{
+  "name": "rustpro",
+  "version": "1.0.0",
+  "description": "rust learn",
+  "main": "watch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-watch": "^0.5.5"
+  }
+}
