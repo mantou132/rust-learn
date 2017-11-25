@@ -21,12 +21,14 @@ const exec = command => {
 
 let timer;
 watch('./', { recursive: true}, function(evt, name) {
-  const match = name.match(/^(\w+)[\/\\]src[\/\\](.*)\.rs/);
+  const match = name.match(/^(\w+)[\/\\](src|tests)[\/\\](.*)\.rs/);
   if (match) {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
       process.stdout.write('\r');
-      exec(`cd ${match[1]} && cargo ${match[2] === 'lib' ? 'test' : 'run'}`);
+      exec(`cd ${match[1]} && cargo ${
+        match[2] === 'tests' || match[3] === 'lib' ? 'test' : 'run'
+      }`);
     }, 100);
   }
 });
