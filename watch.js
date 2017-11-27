@@ -7,14 +7,15 @@ const prompt = '> ';
 
 const exec = command => {
   child_process.exec(command, (error, stdout, stderr) => {
-    if (error) {
-      stdout && console.log(stdout);
-      console.log('\x1b[31m');
-      console.log(stderr);
-      console.log('\x1b[0m');
-    } else {
-      console.log(stdout);
-    }
+      if (stdout) {
+        console.log(stdout);
+      }
+      if (stderr) {
+        const color = error ? 31 : 33;
+        console.log(`\x1b[${color}m`);
+        console.log(stderr);
+        console.log('\x1b[0m');
+      }
     process.stdout.write(prompt);
   });
 };
