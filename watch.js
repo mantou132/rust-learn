@@ -22,7 +22,7 @@ const exec = command => {
 
 let timer;
 watch('./', { recursive: true}, function(evt, name) {
-  const match = name.match(/^(\w+)[\/\\](src|tests)[\/\\](.*)\.rs/);
+  const match = name.match(/^([^/]+)[\/\\](src|tests)[\/\\](.*)\.rs/);
   if (match) {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
