@@ -1,0 +1,7 @@
+[package]
+name = "rust2018"
+version = "0.1.0"
+authors = ["王先硚 <xianqiao.wang@upai.com>"]
+edition = "2018"
+
+[dependencies]
