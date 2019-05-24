@@ -13,5 +13,6 @@ fn main() {
         println!("{}", c);
     }
 
+    println!("emoji {}", "\u{1f60a} 😊 \"");
     println!("space byte is {}", b' ');
 }
