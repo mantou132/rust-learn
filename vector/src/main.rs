@@ -1,4 +1,5 @@
 fn main() {
+    #[derive(Debug)]
     enum SpreadsheetCell {
         Int(i32),
         Float(f64),
@@ -10,5 +11,9 @@ fn main() {
         SpreadsheetCell::Text(String::from("blue")),
         SpreadsheetCell::Float(10.12),
     ];
-    println!("Hello, world! {}", 5);
+
+    for e in row.iter() {
+        println!("this element: {:?}", e);
+    }
+    println!("row: {:?}", row);
 }
