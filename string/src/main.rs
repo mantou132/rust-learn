@@ -12,4 +12,6 @@ fn main() {
     for c in "नमस्ते".bytes() {
         println!("{}", c);
     }
+
+    println!("space byte is {}", b' ');
 }
