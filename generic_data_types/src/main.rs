@@ -1,3 +1,5 @@
+#![feature(const_generics)]
+
 struct Point<T, U> {
     x: T,
     y: U,
@@ -12,7 +14,23 @@ impl<T, U> Point<T, U> {
     }
 }
 
+struct RectangularArray<'a, T, const WIDTH: usize, const HEIGHT: usize> {
+    s: &'a str,
+    array: [[T; WIDTH]; HEIGHT],
+}
+
 fn main() {
+    let ra = RectangularArray {
+        s: "abcd",
+        array: [[1; 2]; 3]
+    };
+    println!("str: {}, RectangularArray.array[0][0]: {}", ra.s, ra.array[0][0]);
+
+    // unimplement？
+    // fn foo<const T: usize>(len: T) -> [i32; T] {
+    //     [1; len: T]
+    // }
+
     let p1 = Point { x: 5, y: 10.4 };
     let p2 = Point { x: "Hello", y: "ccccc"};
 
