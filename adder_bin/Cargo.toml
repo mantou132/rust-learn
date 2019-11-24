@@ -6,5 +6,3 @@ authors = ["mantou <xianqiao.wang@huaban.com>"]
 [dependencies]
 add-one = { path = "add-one" }
 rand = "0.3.12"
-
-[workspace]
