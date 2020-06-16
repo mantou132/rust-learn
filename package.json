@@ -4,7 +4,7 @@
   "description": "rust learn",
   "main": "watch.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node watch.js"
   },
   "author": "",
   "license": "ISC",
