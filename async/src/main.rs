@@ -1,5 +1,3 @@
-#![feature(async_await)]
-
 use futures;
 use futures::{future, FutureExt};
 use std::thread;

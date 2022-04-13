@@ -1,5 +1,3 @@
-#![feature(const_generics)]
-
 struct Point<T, U> {
     x: T,
     y: U,

@@ -1,14 +1,14 @@
 mod outermost {
     pub fn middle_function() {}
 
-    fn middle_secret_function() {}
+    pub fn middle_secret_function() {}
 
-    mod inside {
+    pub mod inside {
         pub fn inner_function() {
             ::outermost::middle_secret_function()
         }
 
-        fn secret_function() {}
+        pub fn secret_function() {}
     }
 }
 
@@ -21,8 +21,12 @@ fn try_me() {
 
 #[cfg(test)]
 mod tests {
+
+    use try_me;
+    
     #[test]
     fn it_works() {
         assert_eq!(2 + 2, 4);
+        try_me()
     }
 }
