@@ -23,6 +23,7 @@ members = [
   "private",
   "thread",
   "tokio-test",
+  "tonic-test",
   "box",
   "functions",
   "map",
