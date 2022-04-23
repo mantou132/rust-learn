@@ -105,9 +105,9 @@
 
 extern crate tokio;
 
-use tokio::prelude::*;
-use tokio::net::TcpListener;
 use tokio::codec::{Decoder, LinesCodec};
+use tokio::net::TcpListener;
+use tokio::prelude::*;
 
 fn main() {
     let addr = "127.0.0.1:3000".parse().expect("couldn't parse address");
@@ -121,21 +121,16 @@ fn main() {
             let future = sink
                 .send(String::from("Welcome to the echo server"))
                 .and_then(|sink| {
-                    let stream = stream
-                        .map(|line| {
-                            println!("{}", line);
-                            format!("You said: {}", line)
-                        })
-                        ;
-                    sink.send_all(stream)
-                        .map(|_| println!("Connection closed"))
+                    let stream = stream.map(|line| {
+                        println!("{}", line);
+                        format!("You said: {}", line)
+                    });
+                    sink.send_all(stream).map(|_| println!("Connection closed"))
                 })
-                .map_err(|e| eprintln!("Error reading directory: {}", e))
-                ;
+                .map_err(|e| eprintln!("Error reading directory: {}", e));
             tokio::spawn(future);
             future::ok(())
         })
-        .map_err(|e| eprintln!("An error occurred: {:?}", e))
-        ;
+        .map_err(|e| eprintln!("An error occurred: {:?}", e));
     tokio::run(future)
 }

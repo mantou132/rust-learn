@@ -1,7 +1,7 @@
+use std::env;
+use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
-use std::error::Error;
-use std::env;
 
 pub fn run(config: Config) -> Result<(), Box<Error>> {
     let mut f = File::open(config.filename)?;
@@ -45,13 +45,16 @@ impl Config {
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
         Ok(Config {
-            query, filename, case_sensitive
+            query,
+            filename,
+            case_sensitive,
         })
     }
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    contents.lines()
+    contents
+        .lines()
         .filter(|line| line.contains(query))
         .collect()
 }
@@ -81,12 +84,8 @@ Rust:
 safe, fast, productive.
 Pick three.";
 
-        assert_eq!(
-            vec!["safe, fast, productive."],
-            search(query, contents)
-        );
+        assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
-
 
     #[test]
     fn case_insensitive() {

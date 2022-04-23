@@ -22,7 +22,7 @@ impl Post {
         self.content.push_str(text);
     }
     pub fn content(&self) -> &str {
-        self.state.as_ref().unwrap().content(&self)
+        self.state.as_ref().unwrap().content(self)
     }
     pub fn request_review(&mut self) {
         if let Some(s) = self.state.take() {
@@ -34,7 +34,6 @@ impl Post {
             self.state = Some(s.approve())
         }
     }
-    
 }
 
 trait State {

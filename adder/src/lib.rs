@@ -38,8 +38,14 @@ mod tests {
 
     #[test]
     fn larger_can_hold_smaller() {
-        let larger = Rectangle { length: 8, width: 7 };
-        let smaller = Rectangle { length: 5, width: 1 };
+        let larger = Rectangle {
+            length: 8,
+            width: 7,
+        };
+        let smaller = Rectangle {
+            length: 5,
+            width: 1,
+        };
 
         assert!(larger.can_hold(&smaller));
     }
@@ -58,7 +64,8 @@ mod tests {
         let result = greeting("Carol");
         assert!(
             result.contains("Carol"),
-            "Greeting did not contain name, value was `{}`", result
+            "Greeting did not contain name, value was `{}`",
+            result
         );
     }
 }

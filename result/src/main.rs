@@ -1,11 +1,11 @@
+use std::fs::File;
 use std::io;
 use std::io::Read;
-use std::fs::File;
 
-fn main () {
+fn main() {
     match read_username_from_file() {
         Ok(string) => println!("{}", string),
-        Err(e) => panic!("{:#?}", e)
+        Err(e) => panic!("{:#?}", e),
     };
 }
 

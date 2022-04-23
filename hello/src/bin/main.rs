@@ -1,7 +1,7 @@
+use std::fs::File;
 use std::io::prelude::*;
 use std::net::TcpListener;
 use std::net::TcpStream;
-use std::fs::File;
 use std::thread;
 use std::time::Duration;
 

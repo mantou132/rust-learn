@@ -23,7 +23,7 @@ fn try_me() {
 mod tests {
 
     use try_me;
-    
+
     #[test]
     fn it_works() {
         assert_eq!(2 + 2, 4);

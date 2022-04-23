@@ -1,5 +1,5 @@
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 use List::{Cons, Nil};
 
 #[derive(Debug)]

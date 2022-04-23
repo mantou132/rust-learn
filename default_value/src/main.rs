@@ -16,7 +16,9 @@ enum SomeKind {
 }
 
 impl Default for SomeKind {
-    fn default() -> Self { SomeKind::A }
+    fn default() -> Self {
+        SomeKind::A
+    }
 }
 
 fn main() {

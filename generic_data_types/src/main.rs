@@ -20,9 +20,12 @@ struct RectangularArray<'a, T, const WIDTH: usize, const HEIGHT: usize> {
 fn main() {
     let ra = RectangularArray {
         s: "abcd",
-        array: [[1; 2]; 3]
+        array: [[1; 2]; 3],
     };
-    println!("str: {}, RectangularArray.array[0][0]: {}", ra.s, ra.array[0][0]);
+    println!(
+        "str: {}, RectangularArray.array[0][0]: {}",
+        ra.s, ra.array[0][0]
+    );
 
     // unimplement？
     // fn foo<const T: usize>(len: T) -> [i32; T] {
@@ -30,15 +33,14 @@ fn main() {
     // }
 
     let p1 = Point { x: 5, y: 10.4 };
-    let p2 = Point { x: "Hello", y: "ccccc"};
+    let p2 = Point {
+        x: "Hello",
+        y: "ccccc",
+    };
 
     let p3 = p1.mixup(p2);
 
     println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
-
-
-
-
 
     //*************************
 
