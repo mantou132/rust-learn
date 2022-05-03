@@ -2,6 +2,7 @@
 members = [
   "dining_philosophers",
   "json",
+  "juniper-test",
   "slices",
   "adder",
   "drop-trait",
