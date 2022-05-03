@@ -3,6 +3,7 @@ members = [
   "dining_philosophers",
   "json",
   "juniper-test",
+  "diesel-test",
   "slices",
   "adder",
   "drop-trait",
